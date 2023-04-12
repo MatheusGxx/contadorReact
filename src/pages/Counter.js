@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Template from './Template'
 import './Counter.css'
 
 
@@ -17,13 +16,13 @@ function Counter(){
         setContador(novoValor)
     }
     return(
-        <Template title="Contador">
+        <>
             <div className="Counter">
             <span>{contador}</span>
             <button onClick={() => handleOnClick('-')}>-</button>
             <button onClick={() => handleOnClick('+')}>+</button>
         </div>
-        </Template>
+        </>
     )
 }
 

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Template from './Template'
-import Loading from './loading'
+import Loading from '../components/loading'
 
 
 function Users(){
@@ -11,18 +10,15 @@ function Users(){
         setLoading(true)
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
-        .then(data =>{
+        .then(data => {
            setUsers(data)
            setLoading(false)
         })
     }, [])
     return(
-        <Template title="Users">
+        <>
          <Loading visible={loading}/>
-        {
-            loading === true ? 'Carregando' : ''
-        }
-
+        
         {
             users.map(user =>{
                 return(
@@ -40,7 +36,7 @@ function Users(){
                 )
             })
         }
-        </Template>
+        </>
        
         
     )

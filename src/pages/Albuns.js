@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import Template from './Template'
-import Loading from './loading'
+import Loading from '../components/loading'
 
 
 
@@ -18,7 +17,7 @@ function Albuns(){
        })
     }, [])
     return(
-        <Template title="Albuns">
+        <>
          <Loading visible={loading}/>
          {
             albuns.map(album => {
@@ -30,7 +29,7 @@ function Albuns(){
 
             })
          }
-        </Template>
+        </>
     )
 }
 
